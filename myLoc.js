@@ -40,11 +40,11 @@ function displayLocation(position) {
 	
 	var div = document.getElementById("location");
 	div.innerHTML = "You are at Latitude: " + latitude + ", Longitude: " + longitude;
-	div.innerHTML += " (with " + position.coords.accuracy + " meters accuracy)";
+	//div.innerHTML += " (with " + position.coords.accuracy + " meters accuracy)";
 	
 	var km = computeDistance(position.coords, timesSquareCoords);
 	var distance = document.getElementById("distance");
-	distance.innerHTML = "You are " + km + " km from Times Square.";
+	distance.innerHTML = "You are " + km + " km from From Bangkok.";
 	
 	if (map == null) {
 		showMap(position.coords);
@@ -103,8 +103,8 @@ function degreesToRadians(degrees) {
 }
 
 var timesSquareCoords = {
-	latitude: 40.7566,
-	longitude: -73.9863	
+	latitude: 13.724717,
+	longitude: 100.633072	
 };
 
 //Google Maps API in Action!
@@ -117,7 +117,7 @@ function showMap(coords) {
 							
 	var mapOptions = {
 		
-		zoom: 10,
+		zoom: 16,
 		center: googleLatAndLong,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 		
